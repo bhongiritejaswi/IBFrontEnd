@@ -1,0 +1,21 @@
+<div class="container">
+<div class="wrapper">
+<br>
+  <!-- Sidebar -->
+  <a  [routerLink]="['custlistofaccs']" 
+  routerLinkActive="router-link-active"  > <nav class="btn btn-success">
+     List of Accounts
+  </nav></a><br><br>
+  <a  [routerLink]="['custfundtransfer']" 
+  routerLinkActive="router-link-active"  > <nav class="btn btn-success">
+    Fund Transfer    
+ </nav></a><br><br>
+ <a  [routerLink]="['custtranshistory']" 
+ routerLinkActive="router-link-active"  > <nav class="btn btn-success">
+  Transaction History
+</nav></a>
+
+   
+</div>
+</div>   
+<router-outlet></router-outlet>
