@@ -7,15 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'IBFrontEnd';
-  custstatus=false;
-  empstatus=false;
-  
-  DisableCustLogin() {
-    console.log("Customer Login Clicked....");
-    this.empstatus=!this.empstatus;
-    if(this.empstatus==true)
-    {
-      return this.empstatus;
-    }
-  }
+   
 }

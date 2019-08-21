@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CustomerloginComponent } from './customerlogin/customerlogin.component';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
@@ -13,6 +14,7 @@ import { CustfundtransferComponent } from './custfundtransfer/custfundtransfer.c
 import { CusttranshistoryComponent } from './custtranshistory/custtranshistory.component';
 import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-transfer-sameacc.component';
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-tra
     CusttranshistoryComponent,
     FundTransferSameaccComponent,
     FundTransferOtheraccComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,17 +36,21 @@ import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-tra
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path:'customerlogin',
+        path:'',
+        component:HomepageComponent
+      },
+       {
+         path:'homepage',
         component:CustomerloginComponent,
-        children:[
+       },
           {
             path:'customerdashboard',
             component:CustomerdashboardComponent,
-            children:[
+          },
               {
                 path:'custfundtransfer',
                 component:CustfundtransferComponent,
-                children:[
+              },
                   {
                     path:'fund-transfer-sameacc',
                     component:FundTransferSameaccComponent
@@ -51,9 +58,8 @@ import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-tra
                   {
                     path:'fund-transfer-otheracc',
                     component:FundTransferOtheraccComponent
-                  }
-                ]
-              },
+                  },
+                 
               {
                 path:'custlistofaccs',
                 component:CustlistofaccsComponent
@@ -61,11 +67,10 @@ import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-tra
               {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent
-              }
-            ]
-          }
-          ]
-      },
+              },
+            
+          
+      
       {
         path:'employeelogin',
         component:EmployeeloginComponent
