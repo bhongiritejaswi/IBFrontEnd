@@ -23,17 +23,18 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: 99999;
-  background: #101010; }
+  background:  #770a0a;
+ }
 #sidenav.open {
   left: -300px; }
 #sidenav .logo {
   width: 100%;
   padding: 20px 50px;
-  background: #101010;
+  background: #770a0a;
   display: block; }
 #sidenav .logo a {
   color: #dadada;
-  font-size: 30px; }
+  font-size:25px; }
 #sidenav .logo a.nav-icon {
   display: none; }
 #sidenav .menu {

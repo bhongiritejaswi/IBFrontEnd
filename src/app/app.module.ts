@@ -45,38 +45,42 @@ import { SidebarComponent } from './sidebar/sidebar.component';
          path:'homepage',
         component:CustomerloginComponent,
        },
-          {
+       {
+        path:'employeelogin',
+        component:EmployeeloginComponent
+      },
+      {
             path:'customerdashboard',
             component:CustomerdashboardComponent,
-          },
-              {
-                path:'custfundtransfer',
-                component:CustfundtransferComponent,
-              },
-                  {
-                    path:'fund-transfer-sameacc',
-                    component:FundTransferSameaccComponent
-                  },
-                  {
-                    path:'fund-transfer-otheracc',
-                    component:FundTransferOtheraccComponent
-                  },
-                 
+            children:[
               {
                 path:'custlistofaccs',
                 component:CustlistofaccsComponent
               },
               {
+                path:'custfundtransfer',
+                component:CustfundtransferComponent,
+              },
+              {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent
-              },
-            
-          
-      
+              }
+
+            ]
+      },
+     
       {
-        path:'employeelogin',
-        component:EmployeeloginComponent
-      }
+             path:'fund-transfer-sameacc',
+             component:FundTransferSameaccComponent
+       },
+      {
+             path:'fund-transfer-otheracc',
+            component:FundTransferOtheraccComponent
+       } 
+       
+      
+    
+     
     ])
   ],
   providers: [],
