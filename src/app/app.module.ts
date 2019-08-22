@@ -15,6 +15,7 @@ import { CusttranshistoryComponent } from './custtranshistory/custtranshistory.c
 import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-transfer-sameacc.component';
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     CusttranshistoryComponent,
     FundTransferSameaccComponent,
     FundTransferOtheraccComponent,
-    HomepageComponent
+    HomepageComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
