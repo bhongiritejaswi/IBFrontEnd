@@ -11,5 +11,5 @@ export class FundTransferSameaccComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }

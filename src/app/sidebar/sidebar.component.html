@@ -1,31 +1,31 @@
 <div class="app">
-  <div id="sidenav">
-    <div class="wrapper">
-      <div class="logo">
-        <a href="#">Dashboard</a>
-        <a href="#" class="nav-icon pull-right"><i class="fa fa-bars"></i></a>
+    <div id="sidenav">
+      <div class="wrapper">
+        <div class="logo">
+          <a href="#">Dashboard</a>
+          <a href="#" class="nav-icon pull-right"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="active">
+              <a [routerLink]="['custlistofaccs']"
+                 routerLinkActive="router-link-active">List of Accounts</a>
+            </li>
+  
+            <li>
+              <a [routerLink]="['custfundtransfer']"
+                 routerLinkActive="router-link-active">Fund Transfer</a>
+            </li>
+  
+            <li>
+              <a [routerLink]="['custtranshistory']"
+                 routerLinkActive="router-link-active">Generate Statement</a>
+            </li>
+  
+  
+          </ul>
+        </div>
+  
       </div>
-      <div class="menu">
-        <ul>
-          <li class="active">
-            <a [routerLink]="['custlistofaccs']"
-               routerLinkActive="router-link-active">List of Accounts</a>
-          </li>
-
-          <li>
-            <a [routerLink]="['custfundtransfer']"
-               routerLinkActive="router-link-active">Fund Transfer</a>
-          </li>
-
-          <li>
-            <a [routerLink]="['custtranshistory']"
-               routerLinkActive="router-link-active">Generate Statement</a>
-          </li>
-
-
-        </ul>
-      </div>
-
     </div>
   </div>
-</div>

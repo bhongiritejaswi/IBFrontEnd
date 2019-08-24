@@ -1,4 +1,4 @@
-<form>
+  <!-- <form>
     <label>Transfer From</label>
      <input type="text">
      <br>
@@ -18,5 +18,26 @@
      <input type="text">
      <br>
      <input type="submit" value="Transfer">
-  </form>
+  </form>   -->
+    <form action="/action_page.php">
+    <br><br>
+    <div class="form-group">
+      <label for="email">Transfer From:</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Transfer To:</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    <div class="form-group">
+            <label for="pwd">Amount:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="form-group">
+                <label for="pwd">Remarks:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+   
+    <button type="submit" class="btn btn-success">Transfer</button>
+  </form>  
   <router-outlet></router-outlet>
