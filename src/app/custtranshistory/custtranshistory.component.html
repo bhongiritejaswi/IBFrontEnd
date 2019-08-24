@@ -1,4 +1,10 @@
-<p>
-  custtranshistory works!
-</p>
+<body>
+  <h3>Generate Transactions</h3>
+</body>
+<label class="label label-primary">Select Account</label>
+        <select>
+                <option *ngFor="let account of accounts">
+                       {{account.acnumber}}
+                </option>
+            </select>   
 <router-outlet></router-outlet>

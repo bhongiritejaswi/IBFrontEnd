@@ -7,19 +7,17 @@
         </div>
         <div class="menu">
           <ul>
-            <li class="active">
-              <a [routerLink]="['custlistofaccs']"
-                 routerLinkActive="router-link-active">List of Accounts</a>
+            <li routerLinkActive="active">
+              <a [routerLink]="['custlistofaccs']">List of Accounts</a>
             </li>
   
-            <li>
+            <li routerLinkActive="active">
               <a [routerLink]="['custfundtransfer']"
-                 routerLinkActive="router-link-active">Fund Transfer</a>
+                 >Fund Transfer</a>
             </li>
   
-            <li>
-              <a [routerLink]="['custtranshistory']"
-                 routerLinkActive="router-link-active">Generate Statement</a>
+            <li routerLinkActive="active">
+              <a [routerLink]="['custtranshistory']">Generate Statement</a>
             </li>
   
   
