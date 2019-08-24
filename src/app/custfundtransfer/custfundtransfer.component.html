@@ -1,7 +1,14 @@
-<h4>Transfer Funds</h4>
+<div class="container">
+        <h2>Fund Transfer</h2>
+        
 
+<br>
 <a  [routerLink]="['fund-transfer-sameacc']" 
-routerLinkActive="router-link-active"><button>Same Account</button></a>&nbsp;&nbsp;&nbsp;
+routerLinkActive="router-link-active">
+<button type="button" class="btn btn-info">Own Geek Account</button>
+</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a  [routerLink]="['fund-transfer-otheracc']" 
-routerLinkActive="router-link-active"><button>Other Accounts</button></a>
+routerLinkActive="router-link-active">
+<button type="button" class="btn btn-danger">Other Accounts</button></a>
+</div>
 <router-outlet></router-outlet>
