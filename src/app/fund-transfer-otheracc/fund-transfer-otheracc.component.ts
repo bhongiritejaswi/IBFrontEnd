@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ListAccountsService } from '../list-accounts.service';
+import {  Accounts } from '../CustomerAccounts';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-fund-transfer-otheracc',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FundTransferOtheraccComponent implements OnInit {
 
-  constructor() { }
+  accounts:Accounts[]
+  private subscription:Subscription;
+
+  constructor(private listaccountsservice:ListAccountsService) { }
 
   ngOnInit() {
+    
+    this.subscription = this.listaccountsservice
+                              .listAccounts()
+                              .subscribe(response => {
+                                this.accounts = response;
+                              })
+
   }
 
 }

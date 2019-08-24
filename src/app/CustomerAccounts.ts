@@ -1,14 +1,23 @@
-export class CustomerAccounts{
-    constructor(private _id:number, private _name:string){
+export class Accounts{
+    constructor(private _aid:number, private _acnumber:number, private _balance:number,private _branch:string,private _ifsc:string){
 
     }
 
-    get id():number{
-        return this._id;
+    get aid():number{
+        return this._aid;
+    }
+    get acnumber():number{
+        return this._acnumber;
+    }
+    get balance():number{
+        return this._balance;
     }
 
-    get name():string{
-        return this._name;
+    get branch():string{
+        return this._branch;
     }
 
+    get ifsc():string{
+        return this._ifsc;
+    }
 }

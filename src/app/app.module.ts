@@ -60,23 +60,27 @@ import { SidebarComponent } from './sidebar/sidebar.component';
               {
                 path:'custfundtransfer',
                 component:CustfundtransferComponent,
+                children:[
+                    {
+                        path:'fund-transfer-sameacc',
+                        component:FundTransferSameaccComponent
+                  },
+                 {
+                        path:'fund-transfer-otheracc',
+                       component:FundTransferOtheraccComponent
+                  }
+                ]
               },
               {
                 path:'custtranshistory',
-                component:CusttranshistoryComponent
-              }
+                component:CusttranshistoryComponent,
+              },
+              
 
             ]
       },
      
-      {
-             path:'fund-transfer-sameacc',
-             component:FundTransferSameaccComponent
-       },
-      {
-             path:'fund-transfer-otheracc',
-            component:FundTransferOtheraccComponent
-       } 
+       
        
       
     

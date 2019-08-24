@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustAcclistServiceService } from '../cust-acclist-service.service';
-import { CustomerAccounts } from '../CustomerAccounts';
+import { ListAccountsService } from '../list-accounts.service';
+import {  Accounts } from '../CustomerAccounts';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -10,16 +10,20 @@ import {Subscription} from 'rxjs';
 })
 export class CustlistofaccsComponent implements OnInit {
 
-  accounts:CustomerAccounts[];
-  currentUser:CustomerAccounts;
+  accounts:Accounts[]
   private subscription:Subscription;
-  private currentAccSubscription:Subscription;
-  constructor(private custAcclistService:CustAcclistServiceService) { }
+
+  constructor(private listaccountsservice:ListAccountsService) { }
 
   ngOnInit() {
-    this.custAcclistService.listAccounts().subscribe(response=>{
-      this.accounts=response;
-    })
+    
+    this.subscription = this.listaccountsservice
+                              .listAccounts()
+                              .subscribe(response => {
+                                this.accounts = response;
+                              })
+
   }
 
+   
 }

@@ -1,22 +1,35 @@
-<form>
-    <label>Transfer From</label>
-     <input type="text">
-     <br>
-     <label>Account Number</label>
-     <input type="text">
-     <br>
-     <label>Account Name</label>
-     <input type="text">
-     <br>
-     <label>IFSC Code</label>
-     <input type="text">
-     <br>
-     <label>Amount</label>
-     <input type="text">
-     <br>
-     <label>Remarks</label>
-     <input type="text">
-     <br>
-     <input type="submit" value="Transfer">
-  </form>
-  <router-outlet></router-outlet>
+<div class="container">
+        <br>
+    <form>
+        <br>
+        <br>
+        <label>Transfer From</label>
+        <select>
+                <option *ngFor="let account of accounts">
+                       {{account.acnumber}}
+                </option>
+            </select>         
+         <br>
+         <label>Account Number</label>
+         <select>
+                <option *ngFor="let account of accounts">
+                       {{account.acnumber}}
+                </option>
+            </select>  
+         <br>
+         <label>Account Name</label>
+         <input type="text">
+         <br>
+         <label>IFSC Code</label>
+         <input type="text">
+         <br>
+         <label>Amount</label>
+         <input type="text">
+         <br>
+         <label>Remarks</label>
+         <input type="text">
+         <br>
+         <input type="submit" value="Transfer">
+      </form>
+      <router-outlet></router-outlet>
+      </div>
