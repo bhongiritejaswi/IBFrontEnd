@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class ListAccountsService {
 
-  private LIST_CUSTOMERS_URL ="http://localhost:8087/api/v1/customers/2/accounts";
+  private LIST_CUSTOMERS_URL ="http://localhost:8087/api/v1/customer/"+ localStorage.getItem('cid') + "/accounts";
 
   accounts:any[]=[];
   constructor(private httpClient:HttpClient) { }

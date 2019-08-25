@@ -8,16 +8,31 @@
     <div class="row">
         <div class="col-md-6 login-form-1">
             <h3 style="color: white">Customer Login</h3>
-            <form>
+            <form method="post" ngForm #form = "ngForm" (ngSubmit)="custlogin(form)">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input id="username"  
+                        ngModel 
+                        type="text" 
+                        required
+                        #username="ngModel"
+                        name="username"
+                        class="form-control"
+                        aria-describedby="username"
+                        required placeholder="Enter username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input id="password" 
+                        type="password" 
+                        ngModel 
+                        required
+                        #password="ngModel"
+                        name="password"
+                        class="form-control" 
+                        aria-describedby="password"
+                        required placeholder="Enter Password">
                 </div>
                 <div class="form-group">
-                  <a  [routerLink]="['/customerdashboard']" 
-                  routerLinkActive="router-link-active"  ><input type="submit" class="btnSubmit" value="Login" /></a>
+ <button type="submit" class="btnSubmit" value="Login"> Login</button>
                 </div>
                 <div class="form-group">
                     <a href="#" class="ForgetPwd">Forget Password?</a>
@@ -26,7 +41,7 @@
         </div>
         <div class="col-md-6 login-form-2">
             <h3>Banker Login</h3>
-            <form>
+            <form method="post" ngForm #form2 = "ngForm" (ngSubmit)="emplogin(form)">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Your Email *" value="" />
                 </div>

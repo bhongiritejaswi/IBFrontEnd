@@ -1,32 +1,69 @@
 <div class="container">
-        <br>
+    <br>
     <form>
-        <br>
-        <br>
-        <label>Transfer From</label>
-        <select>
-                <option *ngFor="let account of accounts">
-                       {{account.acnumber}}
-                </option>
-            </select>
-         
-         <br>
-         <label>Account Number</label>
-         <input type="text">
-         <br>
-         <label>Account Name</label>
-         <input type="text">
-         <br>
-         <label>IFSC Code</label>
-         <input type="text">
-         <br>
-         <label>Amount</label>
-         <input type="text">
-         <br>
-         <label>Remarks</label>
-         <input type="text">
-         <br>
-         <input type="submit" value="Transfer">
-      </form>
-      <router-outlet></router-outlet>
-      </div>
+            <div class="row">
+              <div class="col-md-6">
+            <div class="form-group">
+              <label>Transfer From</label>
+                  <select  class="form-control">
+                          <option *ngFor="let account of accounts">
+                                 {{account.acnumber}}
+                          </option>
+                      </select>
+              
+            </div>
+          
+            <div class="form-group">
+                    <label for="Account Number">Account Number</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        name="Account Number"
+                        required 
+                        ngModel 
+                        #des = "ngModel"
+                        id="des" placeholder="Enter Account Number">
+                  </div>
+                  <div class="alert alert-danger" *ngIf="des.touched && des.invalid">
+                      <span>Account Number is mandatory</span>
+                  </div>
+              
+            <div class="form-group">
+                <label for="IFSC Code">IFSC</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="IFSC Code"
+                    required 
+                    ngModel 
+                    #des = "ngModel"
+                    id="des" placeholder="Enter your IFSC Code">
+              </div>
+              <div class="alert alert-danger" *ngIf="des.touched && des.invalid">
+                  <span>IFSC Code is mandatory</span>
+              </div>
+          
+          <div class="form-group">
+                <label for="Amount">Amount</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="Amount"
+                    required 
+                    ngModel 
+                    #des = "ngModel"
+                    id="des" placeholder="Enter the Amount">
+              </div>
+              <div class="alert alert-danger" *ngIf="des.touched && des.invalid">
+                  <span>Amount is mandatory</span>
+              </div>
+            <button 
+                      type="submit" 
+                      [disabled]="form.invalid"
+                      class="btn btn-primary">Submit</button>
+          
+          </div>
+          </div>
+          </form>
+  <router-outlet></router-outlet>
+  </div>
