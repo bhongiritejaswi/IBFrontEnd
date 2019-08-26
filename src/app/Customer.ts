@@ -1,5 +1,5 @@
 export class Customer{
-    constructor(private _cid:number,private _userName:string,private _password:string,){}
+    constructor(private _cid:number,private _name:string,private _userName:string,private _password:string,){}
 
     get cid():number{
         return this._cid;
@@ -9,5 +9,11 @@ export class Customer{
         return this._userName;
     }
 
+    get name():string{
+        return this._name;
+    }
+get password():string{
+        return this._password;
+    }
     
 }

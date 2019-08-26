@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-customerdashboard',
@@ -6,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customerdashboard.component.css']
 })
 export class CustomerdashboardComponent implements OnInit {
+username
 name
-  constructor() { 
-   this.name=localStorage.getItem('username');
+  constructor(private customerService:CustomerService,private router: Router) { 
+   this.name=localStorage.getItem('name');
    console.log(this.name);
+   
+  }
+  logout() {
+localStorage.clear();
+this.router.navigateByUrl('');
   }
 
   ngOnInit() {
-  }
-
+    }
 }
