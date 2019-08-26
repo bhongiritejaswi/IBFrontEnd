@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListAccountsService } from '../list-accounts.service';
+import { CustomerService } from '../customer.service';
 import {  Accounts } from '../CustomerAccounts';
 import {Subscription} from 'rxjs';
 import { map , filter} from 'rxjs/operators';
@@ -15,8 +15,8 @@ export class FundTransferSameaccComponent implements OnInit {
   accounts:Accounts[];
   dropDownAccounts:Accounts[];
   private subscription:Subscription;
-  from;
-  constructor(private listaccountsservice:ListAccountsService) { }
+
+  constructor(private listaccountsservice:CustomerService) { }
 
   ngOnInit() {
     
