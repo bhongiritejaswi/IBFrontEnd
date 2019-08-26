@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customerdashboard.component.css']
 })
 export class CustomerdashboardComponent implements OnInit {
-
-  constructor() { }
+name
+  constructor() { 
+   this.name=localStorage.getItem('username');
+   console.log(this.name);
+  }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListAccountsService } from '../list-accounts.service';
+import { CustomerService } from '../customer.service';
 import {  Accounts } from '../CustomerAccounts';
 import {Subscription} from 'rxjs';
 
@@ -13,7 +13,7 @@ export class FundTransferSameaccComponent implements OnInit {
   accounts:Accounts[]
   private subscription:Subscription;
 
-  constructor(private listaccountsservice:ListAccountsService) { }
+  constructor(private listaccountsservice:CustomerService) { }
 
   ngOnInit() {
     
