@@ -16,6 +16,7 @@ import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-trans
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { Last10transComponent } from './last10trans/last10trans.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FundTransferSameaccComponent,
     FundTransferOtheraccComponent,
     HomepageComponent,
-    SidebarComponent
+    SidebarComponent,
+    Last10transComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +76,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
               {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent,
+                children:[
+                  {
+                    path:'last10trans',
+                    component:Last10transComponent
+                  }
+                ]
               },
               
 
