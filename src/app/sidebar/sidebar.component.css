@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,300,700,900,400italic");
-
+h4{
+  color: white
+}
 body {
   font-size: 14px;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -23,14 +25,14 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: 99999;
-  background:  #770a0a;
+  background:  #f10606;
  }
 #sidenav.open {
   left: -300px; }
 #sidenav .logo {
   width: 100%;
   padding: 20px 50px;
-  background: #770a0a;
+  background:  #f10606;
   display: block; }
 #sidenav .logo a {
   color: #dadada;
@@ -41,16 +43,16 @@ a:hover {
   position: static; }
 #sidenav .menu ul {
   list-style: none;
-  background: #101010;
-  padding: 10% 0;
+  background:  #f10606;
+    padding: 10% 0;
   margin: 0; }
 #sidenav .menu ul li {
   padding: 6px 14%; }
 #sidenav .menu ul li.active {
-  border-left: solid 4px red; }
+  border-left: solid 4px rgb(247, 243, 243); }
 #sidenav .menu ul li a {
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  color: rgb(255, 255, 255);
   font-weight: 300;
   display: block; }
 #sidenav .menu ul li a:hover {
@@ -94,5 +96,10 @@ a:hover {
     border-top: solid 1px #333; }
   #sidenav .menu ul li {
     padding: 6px 5%; } }
-
+    
+    .btn-info {
+      color: black;
+      background-color: white;
+      border-color: white;
+  }
 /*# sourceMappingURL=app.main.css.map */

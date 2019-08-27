@@ -16,6 +16,7 @@ import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-trans
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CustProfileComponent } from './cust-profile/cust-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FundTransferSameaccComponent,
     FundTransferOtheraccComponent,
     HomepageComponent,
-    SidebarComponent
+    SidebarComponent,
+    CustProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,26 +52,31 @@ import { SidebarComponent } from './sidebar/sidebar.component';
         component:EmployeeloginComponent
       },
       {
-            path:'customerdashboard',
-            component:CustomerdashboardComponent,
+        path:'customerdashboard',
+        component:CustomerdashboardComponent,
+        children:[
+          {
+            path:'cust-profile',
+            component:CustProfileComponent
+          },
+          {
+            path:'custlistofaccs',
+            component:CustlistofaccsComponent
+          },
+          {
+            path:'custfundtransfer',
+            component:CustfundtransferComponent,
             children:[
-              {
-                path:'custlistofaccs',
-                component:CustlistofaccsComponent
+              
+                {
+                    path:'fund-transfer-sameacc',
+                    component:FundTransferSameaccComponent
               },
-              {
-                path:'custfundtransfer',
-                component:CustfundtransferComponent,
-                children:[
-                    {
-                        path:'fund-transfer-sameacc',
-                        component:FundTransferSameaccComponent
-                  },
-                 {
-                        path:'fund-transfer-otheracc',
-                       component:FundTransferOtheraccComponent
-                  }
-                ]
+             {
+                    path:'fund-transfer-otheracc',
+                   component:FundTransferOtheraccComponent
+              }
+            ]
               },
               {
                 path:'custtranshistory',

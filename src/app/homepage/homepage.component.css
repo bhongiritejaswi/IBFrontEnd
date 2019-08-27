@@ -1,11 +1,20 @@
+ body{
+  background: url("../assets/bank.gif");
+  height: 657px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;   
+} 
 .login-container{
   margin-top: 5%;
   margin-bottom: 5%;
 }
 .login-form-1{
   padding: 5%;
-  background: #cc8500;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+
+  padding: 20px;
+  
 }
 .login-form-1 h3{
   text-align: center;
@@ -13,8 +22,10 @@
 }
 .login-form-2{
   padding: 5%;
-  background: #0062cc;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+   border-radius: 15px;
+   
+  padding: 20px;
+  
 }
 .login-form-2 h3{
   text-align: center;
@@ -38,19 +49,6 @@
 }
 .login-form-2 .btnSubmit{
   font-weight: 600;
-  color: #0062cc;
-  background-color: #fff;
-}
-.login-form-2 .ForgetPwd{
   color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-}
-.login-form-1 .ForgetPwd{
-  color: #0062cc;
-  font-weight: 600;
-  text-decoration: none;
-}
-body{
-  background-image: "https://www.pexels.com/photo/4k-wallpaper-architecture-background-black-1308624/";
+  background-color: #0062cc;
 }

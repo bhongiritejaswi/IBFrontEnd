@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
+import {  Accounts } from '../CustomerAccounts';
 import { Router } from '@angular/router';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -9,11 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./customerdashboard.component.css']
 })
 export class CustomerdashboardComponent implements OnInit {
-username
-name
-  constructor(private customerService:CustomerService,private router: Router) { 
-   this.name=localStorage.getItem('name');
-   console.log(this.name);
+
+accounts:Accounts[]
+  private subscription:Subscription;
+  constructor(private router: Router,private listaccountsservice:CustomerService) { 
+   
    
   }
   logout() {
@@ -22,5 +24,11 @@ this.router.navigateByUrl('');
   }
 
   ngOnInit() {
-    }
+    this.subscription = this.listaccountsservice
+    .listAccounts()
+    .subscribe(response => {
+      this.accounts = response;
+    })
+    
+}
 }

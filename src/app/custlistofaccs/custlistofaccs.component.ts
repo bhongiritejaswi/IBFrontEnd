@@ -11,9 +11,15 @@ import {Subscription} from 'rxjs';
 export class CustlistofaccsComponent implements OnInit {
 
   accounts:Accounts[]
+  pan
+  phoneNo
   private subscription:Subscription;
 
-  constructor(private listaccountsservice:CustomerService) { }
+  constructor(private listaccountsservice:CustomerService) { 
+    this.pan=localStorage.getItem('pan');
+    this.phoneNo=localStorage.getItem('phoneNo');
+
+  }
 
   ngOnInit() {
     

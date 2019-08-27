@@ -1,12 +1,19 @@
 <div class="container">
        <br>
-       <form>
-              <div class="row">
+       <form method="post"  ngForm #form = "ngForm" id="basicform" data-parsley-validate="" (ngSubmit)="makeTransaction(form)">
+          <div class="row">
                 <div class="col-md-6">
               <div class="form-group">
-                <label>Transfer From</label>
-                    <select  class="form-control">
-                            <option *ngFor="let account of accounts">
+                <label for="from_acc">Transfer From</label>
+                    <select  class="form-control" 
+                    name="fromAccountNo"
+                      required 
+                      ngModel 
+                      [(ngModel)]="from"
+                      #des = "ngModel"
+                      id="fromAccountNo"
+                      (change)="fromSelected(from)">
+                            <option name="fromAc" *ngFor="let account of accounts" value="{{account.acnumber}}">
                                    {{account.acnumber}}
                             </option>
                         </select>
@@ -14,9 +21,14 @@
               </div>
             
             <div class="form-group">
-                <label>Account Number</label>
-                    <select  class="form-control">
-                            <option *ngFor="let account of accounts">
+                <label for="to_acc">Account Number</label>
+                    <select  class="form-control"  
+                    name = "toAccountNo" 
+                    required 
+                      ngModel 
+                      #des = "ngModel"
+                      id="toAccountNo">
+                            <option name="toAc" *ngFor="let account of dropDownAccounts" value="{{account.acnumber}}">
                                    {{account.acnumber}}
                             </option>
                         </select>
@@ -28,11 +40,11 @@
                   <input 
                       type="text" 
                       class="form-control" 
-                      name="IFSC Code"
+                      name="ifsc"
                       required 
                       ngModel 
                       #des = "ngModel"
-                      id="des" placeholder="Enter your IFSC Code">
+                      id="ifsc" placeholder="Enter your IFSC Code">
                 </div>
                 <div class="alert alert-danger" *ngIf="des.touched && des.invalid">
                     <span>IFSC Code is mandatory</span>
@@ -43,11 +55,11 @@
                   <input 
                       type="text" 
                       class="form-control" 
-                      name="Amount"
+                      name="amount"
                       required 
                       ngModel 
                       #des = "ngModel"
-                      id="des" placeholder="Enter the Amount">
+                      id="amount" placeholder="Enter the Amount">
                 </div>
                 <div class="alert alert-danger" *ngIf="des.touched && des.invalid">
                     <span>Amount is mandatory</span>
@@ -59,7 +71,7 @@
             
             </div>
             </div>
-            </form>
+            </form> 
   
       <router-outlet></router-outlet>
      </div>
