@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
+import {  Accounts } from '../CustomerAccounts';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-custtranshistory',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CusttranshistoryComponent implements OnInit {
 
-  constructor() { }
+  accounts:Accounts[]
+  private subscription:Subscription;
+
+  constructor(private listaccountsservice:CustomerService) { }
 
   ngOnInit() {
+    
+    this.subscription = this.listaccountsservice
+                              .listAccounts()
+                              .subscribe(response => {
+                                this.accounts = response;
+                              })
+
   }
 
 }

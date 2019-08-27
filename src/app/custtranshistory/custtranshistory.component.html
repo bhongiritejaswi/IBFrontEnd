@@ -1,4 +1,28 @@
-<p>
-  custtranshistory works!
-</p>
+<body>
+  <h3>Generate Transactions</h3>
+  <br><br>
+  <div class="container">
+      <br>
+      <form>
+              <div class="row">
+                <div class="col-md-6">
+              <div class="form-group">
+                <label>Select Account</label>
+                    <select  class="form-control">
+                            <option *ngFor="let account of accounts">
+                                   {{account.acnumber}}
+                            </option>
+                        </select>
+                        
+                  </div>
+   
+            </div></div></form>
+            <a  [routerLink]="['last10trans']" 
+            routerLinkActive="router-link-active">
+            <button type="button" class="btn btn-info">Display Last 10 Transactions</button>
+            </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a  [routerLink]="['genstatement']" 
+            routerLinkActive="router-link-active">
+            <button type="button" class="btn btn-danger">Generate Statement</button></a> 
+          </div></body>
 <router-outlet></router-outlet>

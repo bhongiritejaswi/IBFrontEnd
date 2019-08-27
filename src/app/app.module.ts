@@ -16,8 +16,8 @@ import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-trans
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { Last10transComponent } from './last10trans/last10trans.component';
 import { CustProfileComponent } from './cust-profile/cust-profile.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { CustProfileComponent } from './cust-profile/cust-profile.component';
     FundTransferOtheraccComponent,
     HomepageComponent,
     SidebarComponent,
-    CustProfileComponent
+    CustProfileComponent,
+    Last10transComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +82,12 @@ import { CustProfileComponent } from './cust-profile/cust-profile.component';
               {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent,
+                children:[
+                  {
+                    path:'last10trans',
+                    component:Last10transComponent
+                  }
+                ]
               },
               
 

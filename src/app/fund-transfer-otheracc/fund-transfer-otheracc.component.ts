@@ -37,7 +37,7 @@ export class FundTransferOtheraccComponent implements OnInit {
     console.log(Response);
     
   })
-  
+  this.router.navigateByUrl('customerdashboard/custfundtransfer');
   }
   fromSelected(from){
 

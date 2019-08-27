@@ -17,6 +17,7 @@ export class FundTransferSameaccComponent implements OnInit {
   accounts:Accounts[]
   dropDownAccounts:Accounts[]
   private subscription:Subscription;
+  message="";
 
   constructor(private listaccountsservice:CustomerService,private transactionservice:TransactionService,private router: Router) { }
 
@@ -27,17 +28,25 @@ export class FundTransferSameaccComponent implements OnInit {
                               .subscribe(response => {
                                 this.accounts = response;
                               })
+    this.dropDownAccounts=this.accounts;
 
   }
+
+
+  
   
   makeTransaction(formData)
   {
+    
     //console.log(formData.value);
     this.transactionservice.savetransaction(formData.value).subscribe(Response=>{
     console.log(Response);
+    localStorage.setItem('status',Response.status);
     
-  })
-  
+
+  }
+  )
+  this.router.navigateByUrl('customerdashboard/custfundtransfer');
   }
   fromSelected(from){
 
