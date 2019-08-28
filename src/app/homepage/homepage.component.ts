@@ -40,6 +40,26 @@ export class HomepageComponent implements OnInit  {
         else this.error="Incorrect Email/Password";
       })
     }
+
+    emplogin(formData){  
+      console.log(formData);
+      this.loginService.findbyUsernameAndPasswordForCustomer(formData.value.username,formData.value.password)
+      .subscribe(response => {
+        console.log(response);
+        if(response!=null){
+          
+          localStorage.setItem('cid',response.cid.toString());
+        localStorage.setItem('username',response.userName);
+        localStorage.setItem('name',response.name);
+        localStorage.setItem('pan',response.pan);
+        localStorage.setItem('phoneNo',response.phoneNo);
+        
+          this.router.navigateByUrl('customerdashboard/cust-profile');
+          this.error="";
+        }
+        else this.error="Incorrect Email/Password";
+      })
+    }
    
   }
 

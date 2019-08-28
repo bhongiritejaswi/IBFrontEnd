@@ -1,14 +1,15 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from "./material/material.module";
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CustomerloginComponent } from './customerlogin/customerlogin.component';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CustlistofaccsComponent } from './custlistofaccs/custlistofaccs.component';
 import { CustfundtransferComponent } from './custfundtransfer/custfundtransfer.component';
 import { CusttranshistoryComponent } from './custtranshistory/custtranshistory.component';
@@ -18,6 +19,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { Last10transComponent } from './last10trans/last10trans.component';
 import { CustProfileComponent } from './cust-profile/cust-profile.component';
+import { BankerHomeComponent } from './banker-home/banker-home.component';
+import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
+import { AccountEntryComponent } from './account-entry/account-entry.component';
+import { CustomerEntryComponent } from './customer-entry/customer-entry.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +39,17 @@ import { CustProfileComponent } from './cust-profile/cust-profile.component';
     HomepageComponent,
     SidebarComponent,
     CustProfileComponent,
-    Last10transComponent
+    Last10transComponent,
+    BankerHomeComponent,
+    CustomerEntryComponent,
+    CustomerAccountsComponent,
+    AccountEntryComponent
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -89,10 +103,21 @@ import { CustProfileComponent } from './cust-profile/cust-profile.component';
                   }
                 ]
               },
-              
+                              
 
             ]
       },
+
+      {
+        path:'banker',
+        component: BankerHomeComponent
+      },
+        
+      {
+          path:'customers/:id',
+          component:CustomerAccountsComponent
+      },
+
      
        
        
@@ -102,7 +127,8 @@ import { CustProfileComponent } from './cust-profile/cust-profile.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[BankerHomeComponent, CustomerEntryComponent, CustomerAccountsComponent, AccountEntryComponent]
 })
 export class AppModule {
   

@@ -1,5 +1,5 @@
 export class Customer{
-    constructor(private _cid:number,private _name:string,private _userName:string,private _password:string,private _pan:string,private _phoneNo: string){}
+    constructor(private _cid:number,private _name:string,private _userName:string,private _password:string,private _pan:string,private _phoneNo: string, private _address:string, private _city:string, private _state:string, private _zip:string){}
 
     get cid():number{
         return this._cid;

@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.css";
-/* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 div.container{
@@ -65,6 +62,10 @@ snack-bar-container.success {
 mat-footer-row mat-footer-cell{
     justify-content: center;
     font-style: italic;
+}
+mat-header-row mat-header-cell{
+    background-color: black;
+    color: white;
 }
 
 /* filter controls */
