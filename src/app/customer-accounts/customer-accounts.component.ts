@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { MatDialog, MatDialogConfig } from "@angular/material";
-
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { NotificationService } from '../notification.service';
 import { Bankaccount } from '../bankaccount';
@@ -29,7 +29,8 @@ export class CustomerAccountsComponent implements OnInit {
   constructor(route:ActivatedRoute, 
               private dataService: DataService,
               private notificationService: NotificationService,
-              private dialog: MatDialog)
+              private dialog: MatDialog,
+              private router: Router)
                 {
                 this.cid = route.snapshot.params.id;
                 console.log(this.cid);
@@ -84,5 +85,13 @@ export class CustomerAccountsComponent implements OnInit {
       })
     
   }
+  logout() {
+    localStorage.clear();
+    this.router.navigateByUrl('');
+      }
+      back() {
+        
+        this.router.navigateByUrl('banker');
+          }
  
 }

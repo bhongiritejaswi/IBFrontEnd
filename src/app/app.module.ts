@@ -17,7 +17,7 @@ import { FundTransferSameaccComponent } from './fund-transfer-sameacc/fund-trans
 import { FundTransferOtheraccComponent } from './fund-transfer-otheracc/fund-transfer-otheracc.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { Last10transComponent } from './last10trans/last10trans.component';
+
 import { CustProfileComponent } from './cust-profile/cust-profile.component';
 import { BankerHomeComponent } from './banker-home/banker-home.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
@@ -39,7 +39,6 @@ import { CustomerEntryComponent } from './customer-entry/customer-entry.componen
     HomepageComponent,
     SidebarComponent,
     CustProfileComponent,
-    Last10transComponent,
     BankerHomeComponent,
     CustomerEntryComponent,
     CustomerAccountsComponent,
@@ -96,12 +95,7 @@ import { CustomerEntryComponent } from './customer-entry/customer-entry.componen
               {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent,
-                children:[
-                  {
-                    path:'last10trans',
-                    component:Last10transComponent
-                  }
-                ]
+                
               },
                               
 

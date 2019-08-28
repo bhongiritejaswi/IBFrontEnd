@@ -1,14 +1,18 @@
 <br>
 <h3 style="text-align: center">List of Customers</h3>
+<button class="glyphicon glyphicon-log-out" class="btn btn-info btn-lg" style="float:right;margin-right: 40px" (click)='logout()'>
+    Logout
+  </button>
+
 <br>
 
-
+<br><br>
 <div class="search-div">
   <button mat-raised-button color="primary" (click)="onCreate()">
     <mat-icon>add</mat-icon>
     Add Customer
-  </button>
-  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  </button>  &nbsp;
+
   <mat-form-field class="search-form-field" floatLabel="never">
     <input matInput [(ngModel)]="searchKey" placeholder="Search Customer...." autocomplete="off" (keyup)="applyFilter()">
     <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
@@ -16,7 +20,7 @@
     </button>
   </mat-form-field>
 </div>
-
+<br>
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
     <mat-header-row  *matHeaderRowDef="displayedColumns" ></mat-header-row>

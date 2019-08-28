@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { MatDialog, MatDialogConfig } from "@angular/material";
-
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { NotificationService } from '../notification.service';
 import { Customer } from '../customer';
@@ -24,7 +24,8 @@ export class BankerHomeComponent implements OnInit {
 
   constructor(private dataService: DataService,
               private notificationService: NotificationService,
-              private dialog: MatDialog)
+              private dialog: MatDialog,
+              private router: Router)
             {}
 
   ngOnInit() { 
@@ -83,6 +84,9 @@ export class BankerHomeComponent implements OnInit {
     this.getListCustomers();
   });
 }
-  
+logout() {
+  localStorage.clear();
+  this.router.navigateByUrl('');
+    }
 
 }

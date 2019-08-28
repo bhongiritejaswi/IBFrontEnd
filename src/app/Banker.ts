@@ -1,11 +1,9 @@
 export class Banker {
-    constructor(private _id:number,private _adminName:string, private _password:string){}
+    constructor(private _username:string, private _password:string){}
 
-    get id():number{
-        return this._id;
-    }
-    get adminName():string{
-        return this._adminName;
+   
+    get username():string{
+        return this._username;
     }
     get password():string{
         return this._password;

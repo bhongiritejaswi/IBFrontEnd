@@ -7,13 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class TransacdetailsService {
   
-  private Last_10Transac_URL ="http://localhost:8087/api/v3/Last-ten-transactions/212345678676";
+  private Last_10Transac_URL ="http://localhost:8087/api/v3/Last-ten-transactions/";
+  
   
   last10trans:any[]=[];
   constructor(private httpClient:HttpClient) { }
 
-  listlast10trans():Observable<Transactions[]>{
+  listlast10trans(anum):Observable<Transactions[]>{
+    //this.Last_10Transac_URL+=anum;
 
-    return this.httpClient.get<Transactions[]>(this.Last_10Transac_URL);
+    return this.httpClient.get<Transactions[]>(this.Last_10Transac_URL + anum);
+   
   }
 }

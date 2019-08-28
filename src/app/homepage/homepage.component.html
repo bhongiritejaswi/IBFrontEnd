@@ -44,22 +44,42 @@
                 
             </form>
         </div>
-        <div class="col-md-6 login-form-2">
-            <h3 style="color:blue">Banker Login</h3>
-            <label class="text-danger text-center">{{error2}}</label>
-            <form method="post" ngForm #form2 = "ngForm" (ngSubmit)="emplogin(form)">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Login" />
-                </div>
-                
-            </form>
-        </div>
+        <div class="col-md-6 login-form-1">
+           
+          <h3 style="color:blue">Employee Login</h3>
+          <br>
+          <label class="text-danger text-center">{{error2}}</label>
+          <form method="post" ngForm #form2 = "ngForm" (ngSubmit)="emplogin(form2)">
+              <div class="form-group">
+                      <input id="username"  
+                      ngModel 
+                      type="text" 
+                      required
+                      #username="ngModel"
+                      name="username"
+                      class="form-control"
+                      aria-describedby="username"
+                      required placeholder="Enter username">
+              </div>
+              
+              <div class="form-group">
+                      <input id="password" 
+                      type="password" 
+                      ngModel 
+                      required
+                      #password="ngModel"
+                      name="password"
+                      class="form-control" 
+                      aria-describedby="password"
+                      required placeholder="Enter Password">
+              </div>
+              <div class="form-group">
+      
+<button type="submit" class="btnSubmit" value="Login"> Login</button>
+              </div>
+              
+          </form>
+      </div>
     </div>
 </div>
 

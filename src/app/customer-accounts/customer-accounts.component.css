@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+.btn-info {
+    color: white;
+    background-color: #f10606;
+    border-color: #f10606;
+}
+button.mat-primary[_ngcontent-c1] {
+    font-size: 18px;
+    background-color: #f10606;
+}
 div.container{
     margin: 0px 40px;
 }
