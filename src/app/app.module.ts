@@ -23,6 +23,7 @@ import { BankerHomeComponent } from './banker-home/banker-home.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
 import { AccountEntryComponent } from './account-entry/account-entry.component';
 import { CustomerEntryComponent } from './customer-entry/customer-entry.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { CustomerEntryComponent } from './customer-entry/customer-entry.componen
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
     MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
