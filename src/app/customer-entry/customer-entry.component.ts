@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
-import { NotificationService } from '../notification.service';
+import { DataService } from '../services/data.service';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-customer-entry',

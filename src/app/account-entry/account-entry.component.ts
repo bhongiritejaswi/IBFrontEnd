@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
-import { NotificationService } from '../notification.service';
+import { DataService } from '../services/data.service';
+import { NotificationService } from '../services/notification.service';
 import { CustomerAccountsComponent } from '../customer-accounts/customer-accounts.component';
 
 @Component({

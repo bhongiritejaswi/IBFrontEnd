@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 
-import { Customer } from './Customer';
-import { Accounts } from './CustomerAccounts';
+import { Customer } from '../models/Customer';
+import { Accounts } from '../models/CustomerAccounts';
 
 
 @Injectable({

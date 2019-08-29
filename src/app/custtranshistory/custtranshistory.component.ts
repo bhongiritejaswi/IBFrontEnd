@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../customer.service';
-import {  Accounts } from '../CustomerAccounts';
+import { CustomerService } from '../services/customer.service';
+import {  Accounts } from '../models/CustomerAccounts';
 import {Subscription} from 'rxjs';
-import { TransacdetailsService } from '../transacdetails.service';
-import { Transactions } from '../Transactions';
+import { TransacdetailsService } from '../services/transacdetails.service';
+import { Transactions } from '../models/Transactions';
 
 @Component({
   selector: 'app-custtranshistory',

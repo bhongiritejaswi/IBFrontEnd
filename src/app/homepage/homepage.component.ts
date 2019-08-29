@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../customer.service';
-import { BankerService } from '../banker.service';
+import { CustomerService } from '../services/customer.service';
+import { BankerService } from '../services/banker.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 

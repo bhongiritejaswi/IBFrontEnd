@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
-import { NotificationService } from '../notification.service';
-import { Bankaccount } from '../bankaccount';
+import { DataService } from '../services/data.service';
+import { NotificationService } from '../services/notification.service';
+import { Bankaccount } from '../models/bankaccount';
 import { AccountEntryComponent } from '../account-entry/account-entry.component';
 
 
