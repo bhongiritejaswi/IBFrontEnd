@@ -27,17 +27,20 @@ export class CustomerEntryComponent implements OnInit {
   onSubmit() {
     if (this.dataService.form.valid) {
       if(!this.dataService.form.value.cid)
-      { console.log("========="+ this.dataService.form.value)
+      { //console.log("========="+ this.dataService.form.value)
         this.dataService.insertCustomer(this.dataService.form.value).subscribe(res =>
         { 
-          console.log(res);
-          this.onClose();
-          this.notificationService.success(':: Customer added successfully');
-          // if (res == 'Created Successfully')
-          //   {     this.onClose();
-          //         this.notificationService.success(':: Customer added successfully');
-          //   }
+          if (res["cid"] == 0)
+          { 
+            this.onClose();
+            this.notificationService.warn(':: Username already exists, Please try again with another username');
+          }
+          else {
+            this.onClose();
+            this.notificationService.success(':: Customer added successfully');
+          }
         });
+        }
       }
       else{
         this.dataService.updateCustomer(this.dataService.form.value.cid, this.dataService.form.value).subscribe(res =>
@@ -48,7 +51,7 @@ export class CustomerEntryComponent implements OnInit {
       } 
        
     }
-  }
+  
 
   onClose() {
     this.dataService.form.reset();

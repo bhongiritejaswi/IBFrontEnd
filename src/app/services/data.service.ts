@@ -18,11 +18,11 @@ export class DataService {
 
   form: FormGroup = new FormGroup({
     cid: new FormControl(null),
-    name: new FormControl(''),
-    userName: new FormControl(''),
-    password: new FormControl(''),
-    pan: new FormControl(''),
-    phoneNo: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    name: new FormControl('',[Validators.required]),
+    userName: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required, Validators.minLength(6)]),
+    pan: new FormControl('',[Validators.required, Validators.minLength(10),, Validators.maxLength(10)]),
+    phoneNo: new FormControl('', [Validators.required, Validators.minLength(10)]),
     address: new FormControl(''),
     city: new FormControl(''),
     state: new FormControl(''),

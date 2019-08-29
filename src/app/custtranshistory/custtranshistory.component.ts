@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../services/customer.service';
 import {  Accounts } from '../models/CustomerAccounts';
 import {Subscription} from 'rxjs';
+import { Router } from '@angular/router';
 import { TransacdetailsService } from '../services/transacdetails.service';
 import { Transactions } from '../models/Transactions';
 
@@ -17,7 +18,9 @@ export class CusttranshistoryComponent implements OnInit {
   anum:number;
   private subscription:Subscription;
 
-  constructor(private listaccountsservice:CustomerService,private transactionservice:TransacdetailsService) { }
+  constructor(private listaccountsservice:CustomerService,
+    private router: Router,
+    private transactionservice:TransacdetailsService) { }
 
   ngOnInit() {
     
@@ -31,16 +34,9 @@ export class CusttranshistoryComponent implements OnInit {
   getAccNum(acnum){
     console.log("Display clicked",acnum);
     this.anum = acnum;
+    localStorage.setItem('acnum',acnum);
+    this.router.navigateByUrl('customerdashboard/custtranshistory');
     
   }
-  getTransactions(acnum){
-   // this.anum=0;
-    console.log("After making 0==",this.anum); 
-    this.anum=acnum;
-    console.log("First Time and Second Time anum=",acnum);
-    this.subscription=this.transactionservice.listlast10trans(this.anum).subscribe(res=>{
-      this.last10trans=res});
-
-  }
-
+  
 }

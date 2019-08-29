@@ -16,7 +16,7 @@ export class BankerHomeComponent implements OnInit {
 
   customers:Customer[];
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['cid', 'name', 'userName', 'password', 'pan', 'phoneNo', 'address', 'actions'];
+  displayedColumns: string[] = ['cid', 'name', 'userName', 'pan', 'phoneNo', 'address', 'actions'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;

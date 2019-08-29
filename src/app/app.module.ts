@@ -30,7 +30,8 @@ import{BankAuthGuard} from './bank-auth.guard';
 
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 
-import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
+import { MomentModule } from 'angular2-moment';
+import { Last10transComponent } from './last10trans/last10trans.component'; // optional, provides moment-style pipes for date formatting
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MomentModule } from 'angular2-moment'; // optional, provides moment-sty
     BankerHomeComponent,
     CustomerEntryComponent,
     CustomerAccountsComponent,
-    AccountEntryComponent
+    AccountEntryComponent,
+    Last10transComponent
   ],
   imports: [
     BrowserModule,
@@ -107,6 +109,13 @@ import { MomentModule } from 'angular2-moment'; // optional, provides moment-sty
               {
                 path:'custtranshistory',
                 component:CusttranshistoryComponent,
+                children:[
+              
+                {
+                    path:'last10trans',
+                    component:Last10transComponent
+              }
+            ]
                 
               },
                               

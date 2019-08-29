@@ -7,7 +7,7 @@
 
 
 <div class="search-div">
-  <button mat-raised-button color="primary" (click)="onCreate()" style="background-color: #f10606">
+  <button mat-raised-button color="primary" (click)="onCreate()" style="background-color: #f10606 ;height: 50px;border-radius: 15px;font-size: 18px ">
     <mat-icon>add</mat-icon>
     Add Customer
   </button>  &nbsp;
@@ -43,10 +43,6 @@
       <mat-cell *matCellDef="let element">{{element.userName}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="password">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Password</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.password}}</mat-cell>
-    </ng-container>
     
     <ng-container matColumnDef="pan">
       <mat-header-cell *matHeaderCellDef mat-sort-header>PAN</mat-header-cell>

@@ -1,18 +1,21 @@
-<body>
+<header>
+    <h1 style="color: white;text-align: center ;background-color: gray">Geeks Banking Services</h1>
+  </header>
+
+
         
   <div class="container ">
-    <div class="col-md-12">
-        <br>
-      <h1 style="color: crimson;text-align: center">Geeks Banking Services</h1>
-    </div>
+  
+
+      
+        
   </div>
   <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-1">
            
-            <h3 style="color:blue">Customer Login</h3>
-            <br>
-            <label class="text-danger text-center">{{error}}</label>
+            <h3 style="color:#f10606">Customer Login</h3>
+            
             <form method="post" ngForm #form = "ngForm" (ngSubmit)="custlogin(form)">
                 <div class="form-group">
                         <input id="username"  
@@ -40,15 +43,18 @@
                 <div class="form-group">
         
  <button type="submit" class="btnSubmit" value="Login"> Login</button>
+ 
+
                 </div>
-                
+               
+                            &nbsp;
+                        <label class="text-danger text-center">{{error}}</label>
             </form>
         </div>
         <div class="col-md-6 login-form-1">
            
-          <h3 style="color:blue">Employee Login</h3>
-          <br>
-          <label class="text-danger text-center">{{error2}}</label>
+          <h3 style="color:#f10606">Employee Login</h3>
+          
           <form method="post" ngForm #form2 = "ngForm" (ngSubmit)="emplogin(form2)">
               <div class="form-group">
                       <input id="username"  
@@ -75,8 +81,12 @@
               </div>
               <div class="form-group">
       
-<button type="submit" class="btnSubmit" value="Login"> Login</button>
+                  <button type="submit" class="btnSubmit" value="Login"> Login</button>
+
+
               </div>
+              &nbsp;
+                    <label class="text-danger text-center">{{error2}}</label>
               
           </form>
       </div>
@@ -84,4 +94,4 @@
 </div>
 
   <router-outlet></router-outlet>
-  </body>
+  
