@@ -32,6 +32,7 @@ import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the
 
 import { MomentModule } from 'angular2-moment';
 import { Last10transComponent } from './last10trans/last10trans.component'; // optional, provides moment-style pipes for date formatting
+import { IndexpageComponent } from './indexpage/indexpage.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { Last10transComponent } from './last10trans/last10trans.component'; // o
     CustomerEntryComponent,
     CustomerAccountsComponent,
     AccountEntryComponent,
-    Last10transComponent
+    Last10transComponent,
+    IndexpageComponent
   ],
   imports: [
     BrowserModule,
@@ -68,11 +70,11 @@ import { Last10transComponent } from './last10trans/last10trans.component'; // o
     RouterModule.forRoot([
       {
         path:'',
-        component:HomepageComponent
+        component:IndexpageComponent
       },
        {
          path:'homepage',
-        component:CustomerloginComponent,
+        component:HomepageComponent,
        },
        {
         path:'employeelogin',
