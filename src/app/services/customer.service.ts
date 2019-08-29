@@ -11,19 +11,21 @@ import { Accounts } from '../models/CustomerAccounts';
 })
 export class CustomerService {
 
-  private LIST_CUSTOMERS_URL ="http://localhost:8087/api/v1/customer/";
+  private CUSTOMER_URL ="http://localhost:8087/api/v1/customer/";
   
 
   accounts:any[]=[];
   constructor(private httpClient:HttpClient ) { }
 
-  
+  findById(id):Observable<Customer>{
+    return this.httpClient.get<Customer>(this.CUSTOMER_URL+"/"+id);
+  }
 
   listAccounts():Observable<Accounts[]>{
-    return this.httpClient.get<Accounts[]>(this.LIST_CUSTOMERS_URL+ localStorage.getItem('cid') + "/accounts")   
+    return this.httpClient.get<Accounts[]>(this.CUSTOMER_URL+ localStorage.getItem('cid') + "/accounts")   
   }
   findbyUsernameAndPasswordForCustomer(username,password):Observable<Customer>{
-    return this.httpClient.get<Customer>(this.LIST_CUSTOMERS_URL+username+'/'+password);  
+    return this.httpClient.get<Customer>(this.CUSTOMER_URL+username+'/'+password);  
 }
 
 

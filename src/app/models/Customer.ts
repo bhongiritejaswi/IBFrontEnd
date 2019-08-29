@@ -22,4 +22,17 @@ export class Customer{
         return this._phoneNo;
     }
     
+    get address():string{
+        return this._address;
+    }
+    get city():string{
+        return this._city;
+    }
+    get state():string{
+        return this._state;
+    }
+    get zip():string{
+        return this._zip;
+    }
+
 }

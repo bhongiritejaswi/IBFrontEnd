@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit  {
   error="";
   error2="";
   abc;
+  userType='Customer';
   constructor(private loginService:CustomerService,
     private router: Router,
     private bankerService:BankerService) { } 
@@ -32,17 +33,15 @@ export class HomepageComponent implements OnInit  {
       .subscribe(response => {
         console.log(response);
         if(response!=null){
-          
+          localStorage.setItem('userType','customer');
           localStorage.setItem('cid',response.cid.toString());
-        localStorage.setItem('username',response.userName);
-        localStorage.setItem('name',response.name);
+          localStorage.setItem('username',response.userName);
+          localStorage.setItem('name',response.name);
         localStorage.setItem('pan',response.pan);
-        localStorage.setItem('phoneNo',response.phoneNo);
-        
           this.router.navigateByUrl('customerdashboard/cust-profile');
           this.error="";
         }
-        else this.error="Incorrect Email/Password";
+        else this.error="Incorrect Username/Password";
       })
       formData.reset();
     }
@@ -54,10 +53,11 @@ export class HomepageComponent implements OnInit  {
       .subscribe(res => {
         console.log(res);
         if(res!=null){
+          localStorage.setItem('userType','banker');
           this.router.navigateByUrl('banker');
           this.error2="";
         }
-        else this.error2="Incorrect Email/Password";
+        else this.error2="Incorrect Username/Password";
       })
       formData2.reset();
     }

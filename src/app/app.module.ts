@@ -24,6 +24,9 @@ import { CustomerAccountsComponent } from './customer-accounts/customer-accounts
 import { AccountEntryComponent } from './account-entry/account-entry.component';
 import { CustomerEntryComponent } from './customer-entry/customer-entry.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CustAuthGuard } from './cust-auth.guard';
+import{BankAuthGuard} from './bank-auth.guard';
+
 
 
 @NgModule({
@@ -70,6 +73,7 @@ import { ToastrModule } from 'ngx-toastr';
       {
         path:'customerdashboard',
         component:CustomerdashboardComponent,
+        canActivate:[CustAuthGuard],
         children:[
           {
             path:'cust-profile',
@@ -106,12 +110,14 @@ import { ToastrModule } from 'ngx-toastr';
 
       {
         path:'banker',
-        component: BankerHomeComponent
+        component: BankerHomeComponent,
+        canActivate:[BankAuthGuard],
       },
         
       {
           path:'customers/:id',
-          component:CustomerAccountsComponent
+          component:CustomerAccountsComponent,
+          canActivate:[BankAuthGuard],
       },
 
      
