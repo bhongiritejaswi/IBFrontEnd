@@ -23,6 +23,7 @@ import { BankerHomeComponent } from './banker-home/banker-home.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
 import { AccountEntryComponent } from './account-entry/account-entry.component';
 import { CustomerEntryComponent } from './customer-entry/customer-entry.component';
+import { ToastrModule } from 'ngx-toastr';
 
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 
@@ -50,6 +51,7 @@ import { MomentModule } from 'angular2-moment'; // optional, provides moment-sty
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
     MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
