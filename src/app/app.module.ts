@@ -28,6 +28,10 @@ import { CustAuthGuard } from './cust-auth.guard';
 import{BankAuthGuard} from './bank-auth.guard';
 
 
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
+
+import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
+
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import{BankAuthGuard} from './bank-auth.guard';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
       {
