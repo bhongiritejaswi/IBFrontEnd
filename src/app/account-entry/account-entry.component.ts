@@ -37,8 +37,7 @@ export class AccountEntryComponent implements OnInit {
         this.onClose();
         this.notificationService.success(':: Account added successfully');
         });
-      } 
-       
+      }    
     }
   }
 
@@ -47,7 +46,6 @@ export class AccountEntryComponent implements OnInit {
     this.dataService.initializeFormAccountGroup();
     this.dialogRef.close();
   }
-
 
 }
 

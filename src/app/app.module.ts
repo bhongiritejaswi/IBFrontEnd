@@ -24,6 +24,10 @@ import { CustomerAccountsComponent } from './customer-accounts/customer-accounts
 import { AccountEntryComponent } from './account-entry/account-entry.component';
 import { CustomerEntryComponent } from './customer-entry/customer-entry.component';
 
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
+
+import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
+
 
 @NgModule({
   declarations: [
@@ -51,6 +55,8 @@ import { CustomerEntryComponent } from './customer-entry/customer-entry.componen
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([
       {
